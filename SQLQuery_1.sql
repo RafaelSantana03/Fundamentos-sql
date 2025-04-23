@@ -15,9 +15,12 @@ CREATE TABLE [Aluno](
 )
 GO
 
+CREATE INDEX[IX_Aluno_Email] ON [Aluno]([Email]) --Criando um Indice
+DROP INDEX [IX_Aluno_Email] ON [Aluno] -- Removendo um indice na tabela [Aluno]
+
 DROP TABLE [Curso]
 CREATE TABLE [Curso](    
-    [Id] INT NOT NULL,
+    [Id] INT NOT NULL IDENTITY(1, 1),
     [Nome] NVARCHAR(80) NOT NULL,
     [CategoriaId]  INT NOT NULL,
 
